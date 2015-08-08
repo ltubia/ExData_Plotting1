@@ -23,13 +23,13 @@ plot1<-function() {
         y$DateTime<-ymd_hms(paste(y$Date, y$Time))
         
         # Draw graph
-        par(cex.main=0.9, cex=0.75, mfrow = c(1, 1))
+        par(cex=0.7)
         
         hist(y$Global_active_power, main = "Global Active Power", xlab ="Global Active Power (kilowatts)", col = "red")
         
         dev.copy(png, file = "plot1.png", width=480, height=480) ## Copy my plot to a PNG file
         
         dev.off() ## Don't forget to close the PNG device!
-        par(cex.main=1, cex=1)
+        par(cex=1)
         rm(y)
 }        
